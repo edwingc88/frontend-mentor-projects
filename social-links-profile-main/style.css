@@ -1,0 +1,90 @@
+
+:root { 
+  --White: hsl(0, 0%, 100%);
+  --Grey: hsl(0, 0%, 20%);
+  --WhiteGrey: hsl(0, 0%, 88%);
+  --Dark_Grey: hsl(0, 0%, 12%);
+  --Off_Black: hsl(0, 0%, 8%); 
+  --YelloGreen: rgb(199, 237, 62);
+  }
+ 
+  *{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family:Inter;
+    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+  }
+
+  body{
+    font-family: 'Inter';
+    background-color: var(--Off_Black);
+    color:var(--White);
+    font-size: 16px;
+  }
+
+  main{
+    min-height: 100vh;
+    max-width: 1440px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  section{
+    width: 100%;
+    margin: 1rem;
+    background-color: var(--Dark_Grey);
+    margin: 1rem;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    & img{
+      border-radius: 50%;
+      width: 120px;
+    }
+    & h1{
+      color: var(--White);
+      margin-top: 1rem;
+      font-size: 1.7rem
+    }
+    & h3{
+      color: var(--YelloGreen);
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    & p{
+      color: var(--WhiteGrey);
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    & span{
+      background-color: var(--Grey);
+      border-radius: 15px;
+      padding: 1rem 0;
+      margin-top: .5rem;
+    }
+  }
+  
+  .attribution { 
+    padding: 1rem;
+    position: sticky;
+    font-size: 11px;
+    text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
+
+  @media screen and (width >= 375px) {
+    section{
+      max-width:500px;
+    }
+  }
