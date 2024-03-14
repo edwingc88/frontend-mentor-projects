@@ -1,10 +1,13 @@
+import { Header } from "./components/Header"
+import { OverviewContainer } from "./components/OverviewContainer"
 
 
 function App() {
 
   return (
     <>
-      <h1 className="bg-red-600"> Ready</h1>
+      <Header></Header>
+      <OverviewContainer></OverviewContainer>
     </>
   )
 }
