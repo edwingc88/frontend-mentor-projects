@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');      
+
+*{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+}
+ 
+:root{
+          --blue-color: hsl(223, 87%, 63%);
+          --pale-blue:  hsl(223, 100%, 88%);
+          --Light-Red: hsl(354, 100%, 66%);
+          --Gray-color: hsl(0, 0%, 59%);
+          --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+
+
+body{
+        background-color: var(--Light-gray);
+        font-size: 20px;
+        font-family: 'Libre Franklin', sans-serif;
+}
+
+/*---------------  Body -------------------*/
+
+main{
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+img{
+    width: 100%;
+}
+
+#logo{
+    width: 60px;
+    padding-top: 4rem;
+}
+
+h1{
+    padding-top: 1.5rem;
+    color: var(--Gray-color);
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+span{
+   color: black; 
+   font-weight: 700;
+  
+}
+
+.subscribe{
+    font-weight: 300;
+    font-size: .8rem;
+    padding-top: .5rem;
+}
+
+/* ----------------------- Formulario Estilos--------------------- */
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.formulario__group{
+    display: grid;
+    gap: 1rem;
+}
+
+.formulario__input{
+    width: 100%;
+    border-radius: 1rem;
+    position: relative;
+    border: 1px solid var(--pale-blue);
+    padding: .7rem 1.5rem;
+}
+
+.formulario__input:focus{
+    outline: none;
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    padding: 1rem;
+    color: var(--Light-Red);
+    display: none;
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__btn{
+    margin-top: .6rem;
+    border-radius: 1rem;
+    border: 1px solid var(--blue-color);
+    padding: .7rem 1.5rem;
+    background-color: var(--blue-color);
+    color: white;
+    cursor: pointer;
+    transition: .1s ease all;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ----------------------- Validation colors --------------------- */
+
+.formulario__group-correcto .formulario__input {
+    border: 2px solid var(--pale-blue);
+}
+
+.formulario__group-incorrecto .formulario__input {
+    border: 2px solid var(--Light-Red);
+}
+
+img{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.social-networks{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+i{
+    color: var(--blue-color);
+    border-radius: 50%;
+    padding: .5rem .5rem ;
+    border: 1px solid var(--pale-blue);
+    font-size: .9rem;
+    width: 30px;
+    height: 30px;
+}
+
+.copyright{
+    padding: 1.5rem;
+    color: var(--Gray-color);
+    font-weight: 300;
+    font-size: .8rem;
+    bottom: 0;
+}
+
+footer{
+    position:relative; 
+    width: 100%;
+    text-align: center; 
+}
+
+.attribution { 
+    font-size: 11px; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (min-width:375px) {
+
+    main{
+        width: 600px;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    .formulario__group{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: .5rem;
+         /*   grid-template-columns:  3fr 1fr;*/
+        align-items:flex-start;
+    }
+    
+}

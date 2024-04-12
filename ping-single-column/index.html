@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <main>
+   <img id="logo" src="images/logo.svg" alt="logo-ping">
+    <h1>We are launching <span>soon!</span> </h1>
+    <p class="subscribe">Subscribe and get notified</p>
+    <form class="formulario" id="formulario">
+      <div class="formulario__group" id="group__email">
+        <div class="formulario__group-input" >
+          <input type="email" class="formulario__input" id="email" name="email" required  placeholder="Your email address...">
+          <p class="formulario__input-error">Plase provide a valid email address</p>
+        </div>   
+        <button class="formulario__btn">Notify Me</button>
+      </div>
+    </form>
+    <img src="images/illustration-dashboard.png" alt="illustration-dashboard">
+  </main>
+
+  <footer>
+    <div class="social-networks"> 
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <p class="copyright">  &copy; Copyright Ping. All rights reserved.</p>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+
+  <script>
+      const formulario= document.getElementById('formulario');
+      const inputs = document.querySelectorAll("#formulario input");
+      const expresiones={ correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-.]+\.[a-zA-Z0-9-.]+$/,}
+
+      const validarFormulario =(e)=>{
+
+            if  (e.target.name == "email"){
+              if(expresiones.correo.test(e.target.value)){
+         
+                document.getElementById('group__email').classList.remove('formulario__group-incorrecto');
+                document.getElementById('group__email').classList.add('formulario__group-correcto');
+                document.querySelector('.formulario__input-error').classList.remove('formulario__input-error-activo');
+              }else{
+      
+                document.getElementById('group__email').classList.add('formulario__group-incorrecto');
+                document.getElementById('group__email').classList.remove('formulario__group-correcto');
+                document.querySelector('.formulario__input-error').classList.add('formulario__input-error-activo');
+              }
+            }
+        };
+
+      inputs.forEach((input)=>{
+        input.addEventListener('keyup',validarFormulario);
+        input.addEventListener('blur',validarFormulario)
+      });
+
+      formulario.addEventListener('submit',(e)=>{
+        e.preventDefault(); 
+      })
+
+  </script>
+</body>
+</html>
