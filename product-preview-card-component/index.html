@@ -3,34 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkcyan: ' hsl(158, 36%, 37%)',
+            cream:'hsl(30, 38%, 92%)',
+            verydarkblue:'hsl(212, 21%, 14%)',
+            darkgrayishblue:'hsl(228, 12%, 48%)',
+            white:'hsl(0, 0%, 100%)'
+          }
+        }
 
+    }
+  }
+  </script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Product preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+<body class="grid text-sm place-content-center h-screen mx-auto bg-cream ">
 
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<article class=" flex flex-col mx-4 sm:flex-row  text-darkgrayishblue sm:w-[576px] sm:max-w-[576px] max-w-[375px] w-full  bg-white rounded-md  overflow-hidden">
+  <div class="flex-1 w-full  ">
+    <picture>
+      <source srcset="./images/image-product-desktop.jpg" media="(min-width: 575px)">
+      <img class="object-cover w-full h-full" src="./images/image-product-mobile.jpg" alt="">
+  </picture>
   </div>
+  <div class="py-6 px-8  flex-1 ">
+    <h2 class="pb-3 sm:pb-2 font-['Monserrat']">PERFUME</h>
+    <h1 class="text-3xl font-bold pb-4 sm:pb-3 text-verydarkblue text-balance">  Gabrielle Essence Eau De Parfum
+    </h1>
+    <p class="pb-4 sm:pb-3 text-balance font-['Monserrat']">
+      A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+      Perfumer-Creator for the House of CHANEL.    
+    </p>
+    <div class="flex items-center text-darkcyan sm:pb-4 pb-5 space-x-4">
+      <span class="text-2xl font-bold">$149.99</span>
+      <span class="text-sm">$169.99</span>
+    </div>
+    <button class="flex bg-darkcyan hover:bg-green-900 w-full py-3 mx-auto justify-center space-x-2 content-center align-middle rounded-md ">
+      <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/>
+     </svg><span class="text-white">Add to Cart</span>
+   </button>
+  </div>
+</article>
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+
+  @layer base {
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      src: url(./fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+    }
+  }
+
+  @font-face {
+      font-family: 'Monserrat';
+      font-style: normal;
+      src: url(./fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    }
+  
+
+  html {
+    font-family: "Fraunces", system-ui, sans-serif;
+  }
+</style>
+
 </body>
 </html>
