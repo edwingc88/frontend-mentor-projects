@@ -3,50 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link href="./style.css" rel="stylesheet" />
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          darkslategray: 'hsl(234, 29%, 20%)',
+          charcoalgrey: 'hsl(235, 18%, 26%)',
+          Grey: 'hsl(231, 7%, 60%)',
+          white: 'hsl(0, 0%, 100%)'
+        }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+/*       @tailwind base; */
+     /*  @tailwind components;
+      @tailwind utilities; */
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+
+        @font-face {
+          font-family: 'Roboto';
+          src: url(./assets/fonts/Roboto-Regular.ttf);
+       }
+
+
+    @font-face {
+          font-family: 'Robotobold';
+          src: url(./assets/fonts/Roboto-Bold.ttf);
+       }
+
   </style>
 </head>
-<body>
+<body class="bg-charcoalgrey grid align-middle m-auto justify-center place-content-center h-full sm:h-screen ">
 
   <!-- Sign-up form start -->
+  <section id="signup" class=" flex  flex-col justify-normal sm:justify-center align-middle sm:flex-row-reverse bg-white sm:h-full h-screen  min-w-80 sm:w-[640px] w-screen sm:p-4 rounded-3xl">
+      <picture>
+       <source srcset="./assets/images/illustration-sign-up-desktop.svg" media="(min-width: 575px)">
+        <img class=" sm:w-[300px] aspect-ratio: 1/1 w-full" src="assets/images/illustration-sign-up-mobile.svg" alt="">
+      </picture>
+      <div class="flex flex-col justify-center p-2 px-6">
+        <h1 class="font-['Robotobold'] text-darkslategray font-bold text-3xl   sm:py-3 py-5">
+          Stay updated!
+        </h1>
+        <p class="text-xs">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class=" flex flex-col list-image-none py-2 pb-4 px-0 [&>li]:py-1 [&>li]:flex [&>li>img]:mr-2 text-xs">
+          <li><img src="assets/images/icon-list.svg" alt="icon list"> Product discovery and building what matters</li>
+          <li><img src="assets/images/icon-list.svg" alt="icon list">Measuring to ensure updates are a success</li>
+          <li><img src="assets/images/icon-list.svg" alt="icon list">And much more!</li>
+        </ul>
+        <form class="flex flex-col" action="">
+          <label  class="flex justify-between text-xs mb-1"  for=""><span>Email address</span></label>
+          <input name="email" class="p-2 border-gray-700 border rounded-md mb-4" type="email" placeholder=" email@company.com">
+          <button class="text-white my-1 p-3 rounded-md w-full bg-darkslategray hover:bg-gradient-to-r from-pink-600 to-orange-600">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
 
-  Stay updated!
+    
+    <!-- Sign-up form end -->
 
-  Join 60,000+ product managers receiving monthly updates on:
-
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
+      </div>
+  </section>
   <!-- Success message start -->
+  <div id="success" class="invisible absolute flex flex-col justify-around md:w-[350px] md:h-full w-full md:justify-normal h-screen bg-white p-8 rounded-2xl m-2">
+    <div>
 
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <img class="md:w-8 w-12" src="assets/images/icon-success.svg" alt="">
+      <h2 class="text-darkslategray font-bold text-3xl py-4">Thanks for subscribing!</h2>
+            
+    </div>
+      <button  id="dismiss" class="p-3 bg-darkslategray mt-4 w-full rounded-md text-white hover:bg-gradient-to-r from-pink-600 to-orange-600">Dismiss message</button>
   </div>
 </body>
 </html>
+
+<script src="script.js"></script>
