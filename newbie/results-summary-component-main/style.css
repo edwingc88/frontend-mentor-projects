@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif:wght@400;300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+
+:root {
+--Light_red: hsl(0, 100%, 67%);
+--Orangey_yellow: hsl(39, 100%, 56%);
+--Green_teal: hsl(166, 100%, 37%);
+--Cobalt_blue: hsl(234, 85%, 45%);
+--Nutmeg: hsl(14, 45%, 36%);
+--LightSlateBlue: hsl(252, 100%, 67%);
+--LightRoyalBlue: hsl(241, 81%, 54%);
+--VioletBlue : hsla(256, 72%, 46%, 1);
+--PersianBlue : hsla(241, 72%, 46%, 0);
+--White: hsl(0, 0%, 100%);
+--PaleBlue: hsl(221, 100%, 96%);
+--LightLavender: hsl(241, 100%, 89%);
+--DarkGrayBlue: hsl(224, 30%, 27%);
+}
+
+@font-face {
+  font-family: "HankenGrotesk";
+  src:url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format(ttf) tech(variations);
+  font-weight: 100 800;
+  font-stretch: 50% 200%;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body{
+  font-size: 18px;
+  font-family: HankenGrotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--PaleBlue);
+}
+
+p{
+  font-size: .8em
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+article{
+  display: flex;
+  max-width:540px;
+  width: 100%;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 18px 15px 45px -6px rgba(0,0,0,0.39);
+  background: var(--PaleBlue);
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  flex-basis: content;
+  flex-grow: 1;
+  max-width: 50%;
+  padding: 1.2em;
+}
+
+section:first-child{
+  color: white;
+  border: 2px solid rgb(29, 0, 133);
+  border-radius: 1em;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(to top,var(--Cobalt_blue) ,60%, var(--LightSlateBlue) ); 
+  & p{
+  padding: .4em .4em;
+  }
+  & h3{
+    font-size: 3em;
+  }
+  & span{
+    font-size: .8em;
+  }
+  & h2{
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+}
+
+section:nth-child(2){
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+h2{
+  font-weight: 700;
+  font-size:1em;
+}
+
+.circle{
+  background: linear-gradient(to bottom,var(--VioletBlue) ,30%,rgba(78, 33, 202, 0.749)); 
+  width: 100%;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  margin:1.2em auto;
+  box-shadow: 0px 0px 25px #3f4480;
+  backdrop-filter: blur(10px);
+}
+
+#info{
+  display: flex;
+  flex-direction: column;
+  gap:.5em;
+  margin: 1.5em 0;
+}
+
+#info div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2em .4em;
+  border-radius: .4em;
+}
+
+#info div p{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#info div img{
+  width: 100%;
+  margin-left: 3px;
+}
+
+
+#info div span{
+  font-weight: 700;
+}
+
+
+button{
+  background: var(--DarkGrayBlue);
+  color: white;
+  border-radius: 1em;
+  border: 2px solid rgb(2, 1, 22);
+  padding: .8em;
+}
+
+
+@media (width <=  500px) {
+  article{
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: .5em 1em;
+  } 
+
+  section{
+    width: 100%;
+    max-width: 100%;
+    padding: 1em;
+  }
+}
+
