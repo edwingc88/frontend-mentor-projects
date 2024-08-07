@@ -163,6 +163,18 @@ button{
   padding: .8em;
 }
 
+button{
+  background: var(--DarkGrayBlue);
+  color: white;
+  border-radius: 1em;
+  border: 2px solid rgb(2, 1, 22);
+  padding: .8em;
+}
+
+button:hover{
+  background: var(--LightSlateBlue);
+}
+
 
 @media (width <=  500px) {
   article{
